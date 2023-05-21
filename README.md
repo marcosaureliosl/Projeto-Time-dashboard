@@ -39,8 +39,8 @@ Finished project on a 1440p![2023-05-21](https://github.com/marcosaureliosl/Proj
 
 ### Links
 
-- Solution URL: [solution on my frontend mentor profile])()
-- Live Site URL: [live site on netlify]()
+- Solution URL: [solution on my frontend mentor profile])(https://www.frontendmentor.io/solutions/usando-o-datajnon-pela-primeira-vez-super-responsivo-e-bastante-js-4hYLFEZ8AU)
+- Live Site URL: [live site on netlify](https://marcosaureliosl.github.io/Projeto-Time-dashboard/)
 
 ## My process
 
