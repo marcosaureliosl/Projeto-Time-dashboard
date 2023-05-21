@@ -1,0 +1,551 @@
+/* || IMPORTS || */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+/* || RESET || */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+    2. Remove default margin
+  */
+* {
+    margin: 0;
+}
+
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+    height: 100%;
+}
+
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/*
+    8. Avoid text overflows
+  */
+S p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+/* || VARIABLES || */
+:root {
+    /* || COLORS || */
+    --clr-primary-400: hsl(246, 80%, 60%);
+    --clr-primary-900: hsl(226, 43%, 10%);
+    --clr-primary-800: hsl(235, 46%, 20%);
+    --clr-primary-500: hsl(235, 45%, 61%);
+    --clr-primary-200: hsl(236, 100%, 87%);
+    --clr-primary-100: hsl(0, 0%, 100%);
+
+
+    --clr-card-header-work: hsl(15, 100%, 70%);
+    --clr-card-header-play: hsl(195, 74%, 62%);
+    --clr-card-header-study: hsl(348, 100%, 68%);
+    --clr-card-header-excersie: hsl(145, 58%, 55%);
+    --clr-card-header-social: hsl(264, 64%, 52%);
+    --clr-card-header-self-care: hsl(43, 84%, 65%);
+
+    /* || FONTS || */
+    --ff-primary: 'Rubik', sans-serif;
+
+    /* || FONT-SIZE || */
+    --fs-300: 0.9375rem;
+    /* 15px */
+    --fs-400: 1.125rem;
+    /* 18px */
+    --fs-600: 2.5rem;
+    /* 40px */
+    --fs-700: 3.5rem;
+    /* 56px */
+
+    /* || FONT-WEIGHT || */
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+
+    /* || OTHERS || */
+    --border-radius: 1rem;
+    --padding-main: 1.5rem;
+
+}
+
+/* || UTILITIES || */
+.bg-primary-400 {
+    background-color: var(--clr-primary-400);
+}
+
+.bg-card-800 {
+    background-color: var(--clr-primary-800);
+}
+
+.bg-card-header-work {
+    background-color: var(--clr-card-header-work);
+}
+
+.bg-card-header-play {
+    background-color: var(--clr-card-header-play);
+}
+
+.bg-card-header-study {
+    background-color: var(--clr-card-header-study);
+}
+
+.bg-card-header-excersie {
+    background-color: var(--clr-card-header-excersie);
+}
+
+.bg-card-header-social {
+    background-color: var(--clr-card-header-social);
+}
+
+.bg-card-header-self-care {
+    background-color: var(--clr-card-header-self-care);
+}
+
+.fw-light {
+    font-weight: var(--fw-light);
+}
+
+.fw-regular {
+    font-weight: var(--fw-regular);
+}
+
+.fw-medium {
+    font-weight: var(--fw-medium);
+}
+
+.fs-300 {
+    font-size: var(--fs-300);
+}
+
+.fs-400 {
+    font-size: var(--fs-400);
+}
+
+.fs-600 {
+    font-size: var(--fs-600);
+}
+
+/* || GLOBAL || */
+.visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+body {
+    background-color: var(--clr-primary-900);
+    color: var(--clr-primary-100);
+    min-height: 100vh;
+    font-family: var(--ff-primary);
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1110px;
+    width: calc(100% - 2rem * 2);
+    max-height: 520px;
+    height: 100%;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.875rem;
+}
+
+.profile__card {
+    grid-column: 1 / 2;
+    grid-row: 1 / span 2;
+}
+
+/* || PROFILE || */
+.profile__card {
+    display: grid;
+    grid-template-rows: auto min-content;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.top-container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.625rem;
+    line-height: 1.2;
+}
+
+.profile__top {
+    border-radius: var(--border-radius);
+}
+
+.top-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+
+.top-container img {
+    width: 78px;
+    aspect-ratio: 1/1;
+    border: 3px solid var(--clr-primary-100);
+    border-radius: 50%;
+}
+
+
+.profile__bottom {
+    padding: var(--padding-main);
+    display: flex;
+    flex-direction: column;
+    gap: 1.375rem;
+
+}
+
+
+.profile__bottom a:link {
+    color: var(--clr-primary-500);
+    text-decoration: none;
+}
+
+/* visited link */
+.profile__bottom a:visited {
+    color: var(--clr-primary-500);
+}
+
+/* mouse over link */
+.profile__bottom a:hover {
+    color: var(--clr-primary-100);
+}
+
+/* selected link */
+.profile__bottom a:active {
+    color: var(--clr-primary-100);
+}
+
+.activated:visited:not(:hover) {
+    color: var(--clr-primary-100);
+}
+
+
+/* || CARD || */
+
+
+
+.card {
+    display: grid;
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    /* Elimination halo effect on bottom corner ( color overlapping) */
+    border-bottom-left-radius: calc(var(--border-radius) * 2);
+    border-bottom-right-radius: calc(var(--border-radius) * 2);
+
+
+}
+
+.card-top {
+    min-height: 2.875rem;
+    margin-right: 1rem;
+}
+
+.card-bottom {
+    background-color: var(--clr-primary-800);
+    border-radius: 1rem;
+
+    padding: var(--padding-main);
+    z-index: 999;
+}
+
+.card h2 {
+    font-size: var(--fs-400);
+}
+
+.card h3 {
+    font-size: var(--fs-700);
+}
+
+.card p {
+    font-size: var(--fs-300);
+}
+
+.card-top {
+    background-repeat: no-repeat;
+    background-position: right 0 top -10px;
+}
+
+.work-card .card-top {
+    background-image: url(../images/icon-work.svg);
+}
+
+.play-card .card-top {
+    background-image: url(../images/icon-play.svg);
+}
+
+.study-card .card-top {
+    background-image: url(../images/icon-study.svg);
+}
+
+.exercise-card .card-top {
+    background-image: url(../images/icon-exercise.svg);
+    background-position: right 0 top 0;
+}
+
+.social-card .card-top {
+    background-image: url(../images/icon-social.svg);
+}
+
+.self-care-card .card-top {
+    background-image: url(../images/icon-self-care.svg);
+}
+
+.card-bottom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.card-type {
+    font-weight: var(--fw-regular);
+}
+
+.button {
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-color: transparent;
+    position: relative;
+}
+
+.button .dots {
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 6px;
+    left: 8px;
+}
+
+.button::before,
+.button::after {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    background-color: var(--clr-primary-100);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.button::before {
+    top: 6px;
+    left: 0;
+}
+
+.button::after {
+    top: 6px;
+    right: 0;
+}
+
+.card-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card-bottom-container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.card-bottom-container h3 {
+    line-height: 1.2;
+    font-weight: var(--fw-light);
+}
+
+.card-bottom-container p {
+    color: var(--clr-primary-500);
+
+}
+
+.tilt-card {
+    transition: transform 0.3s;
+}
+
+.tilt-card:hover {
+    transform: perspective(1000px) rotateX(-5deg) rotateY(5deg) scale(1.05);
+}
+
+@media screen and (max-width: 960px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+        max-height: min-content;
+    }
+
+    .profile__card {
+        grid-column: 1 / 2;
+        grid-row: 1 / span 2;
+    }
+
+    .work-card {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+    }
+
+    .play-card {
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+
+    .study-card {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .exercise-card {
+        grid-column: 2 / 3;
+        grid-row: 3 / 4;
+    }
+
+    .social-card {
+        grid-column: 1 / 2;
+        grid-row: 4 / 5;
+    }
+
+    .self-care-card {
+        grid-column: 2 / 3;
+        grid-row: 4 / 5;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    :root{
+        --fs-600: 1.5rem;
+        --fs-700: 2rem;
+    }
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto min-content;
+        gap: 1.5rem;
+    }
+
+    .profile__card {
+        grid-column: 1 / 2;
+    }
+
+    .work-card {
+        grid-column: 1 / 2;
+        grid-row: 3 / 4;
+    }
+
+    .play-card {
+        grid-column: 1 / 2;
+        grid-row: 5 / 6;
+    }
+
+    .study-card {
+        grid-column: 1 / 2;
+        grid-row: 7 / 8;
+    }
+
+    .exercise-card {
+        grid-column: 1 / 2;
+        grid-row: 9 / 10;
+    }
+
+    .social-card {
+        grid-column: 1 / 2;
+        grid-row: 11 / 12;
+    }
+
+    .self-care-card {
+        grid-column: 1 / 2;
+        grid-row: 13 / 14;
+    }
+
+    .profile__bottom{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .top-container{
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+
+    .top-info{
+        
+        justify-content:center;
+    }
+
+    .card-bottom-container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .previous-hours{
+        display: flex;
+        align-items: center;
+    }
+
+    .card-bottom{
+        gap: .5rem;
+    }
+}
